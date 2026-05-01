@@ -73,6 +73,16 @@ st.markdown("""
         box-shadow: 0 4px 12px rgba(163, 22, 46, 0.4);
         color: white;
     }
+    /* Sağ üstteki Streamlit menüsünü ve üst boşluğu gizle */
+    [data-testid="stHeader"] {
+        visibility: hidden;
+    }
+    #MainMenu {
+        visibility: hidden;
+    }
+    footer {
+        visibility: hidden;
+    }
     
     /* Slider ve vurgu renkleri */
     div.stSlider > div[data-baseweb="slider"] > div > div > div {
