@@ -1,4 +1,4 @@
-# MQUIZ AI - LANSMAN SÜRÜMÜ (Özel Bordo Tema)
+# MQUIZ AI - LANSMAN SÜRÜMÜ (Özel Bordo Tema + Bulut Güvenliği)
 import streamlit as st
 import PyPDF2
 import google.generativeai as genai
@@ -9,10 +9,15 @@ from dotenv import load_dotenv
 
 # --- 1. SİSTEM AYARLARI ---
 load_dotenv()
-api_key = os.getenv("GEMINI_API_KEY")
+
+# Önce Streamlit Cloud'un kendi "Secrets" kasasına bak, bulamazsan yerel .env'ye bak
+if "GEMINI_API_KEY" in st.secrets:
+    api_key = st.secrets["GEMINI_API_KEY"]
+else:
+    api_key = os.getenv("GEMINI_API_KEY")
 
 if not api_key:
-    st.error("🚨 Kritik Hata: API Anahtarı bulunamadı. Lütfen .env dosyanızı kontrol edin.")
+    st.error("🚨 Kritik Hata: API Anahtarı bulunamadı. Lütfen Ayarlar > Secrets kısmını kontrol edin.")
     st.stop()
 
 genai.configure(api_key=api_key)
