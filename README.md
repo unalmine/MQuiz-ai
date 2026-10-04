@@ -2,7 +2,7 @@
 
 **MQuiz AI**, kişisel PDF dokümanlarınızı saniyeler içinde yapılandırılmış, profesyonel testlere dönüştüren yapay zeka destekli bir eğitim asistanıdır. Google Gemini altyapısı ile çalışır ve öğrenme sürecinizi modernize eder.
 
-🌍 **Canlı Demo:** [MQuiz AI'ı Hemen Deneyin](https://mquiz-ai.streamlit.app)
+
 
 
 
